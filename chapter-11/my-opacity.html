@@ -7,24 +7,21 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="style.css" type="text/css" />
 	<style type="text/css">
-		div {
+		div.custom {
 			width: 100px;
 			height: 100px;
-			margin: 40px;
+			/* margin: 40px; */
 			display: inline-block;
+			vertical-align: middle;
 			background-color: #ee3e80;
 		}
-		div.a {
-			display: block;
-			margin: 20px 40px 40px 40px;
-		}
-		p {
+		p.custom {
 			width: 100px;
 			height: 100px;
 			position: relative;
 			top: 20px;
 			left: 20px;
-			margin: 20px;
+			/* margin: 20px; */
 		}
 		p.one {
 			background-color: rgb(0, 0, 0);
@@ -34,14 +31,145 @@
 			background-color: rgb(0, 0, 0);
 			background-color: rgba(0, 0, 0, 0.5);
 		}
+		.custom-p {
+			margin: 5px;
+			padding-top: 20px;
+			padding-left: 20px;
+			padding: 20px;
+			border: solid 1px black;
+		}
+		.test-p {
+			position: relative;
+		}
+		.miscellaneous {
+			display: block;
+			margin: 3px 0;
+		}
+
+		/* Defines the style for a container */
+		.container {
+			width: 600px;
+			margin: 16px 0 8px;
+		}
+		.block {
+			background-color: red;
+			height: 100px;
+		}
+
+		.block2 {
+			background-color: orange;
+			height: 80px;
+		}
+
+		.block3 {
+			background-color: green;
+			line-height: 120px;
+		}
+
+		/* Fake (pseudo) element, that enables vertical-align */
+		.block2:before {
+			content: '';
+			display: inline-block;
+			vertical-align: middle;
+			height: 100%;
+		}
+		.inner {
+			display: inline-block;
+			vertical-align: middle;
+			background-color: yellow;
+			padding: 3px 5px;
+		}
+		.inner1 {
+			height: 30px;
+		}
+		.inner2 {
+			height: 20px;
+		}
+
+		.inner3 {
+			width: 30%;
+			line-height: normal;
+		}
+
+		@import url(https://fonts.googleapis.com/css?family=PT+Sans:400,700);
+
+		h3, div {
+			font-family: 'PT Sans', sans-serif;
+		}
+
+		h3 {
+			margin: 40px 0 7px;
+		}
+
+		.center-block-elements {
+			margin: auto;
+			width: 60%;
+			padding: 10px;
+		}
+
+		.center-text {
+			text-align: center;
+		}
+
+		.w3school-border {
+			border: 3px solid green;
+		}
+		.center-image {
+			display: block;
+			margin: auto;
+		}
 	</style>
 </head>
 <body>
-	<div><p class="one"></p></div>
+	<div class="container">
+		<div class="w3school-border center-block-elements">Hey ya</div>
+		<div class="w3school-border center-text">Hey ya</div>
+		<h2>Center an Image</h2>
+		<p>To center an image, set the left and right margin to auto,
+		 and make it into a block element.</p>
+		 <img class="center-image" src="paris.jpg" alt="Photo of Paris." width="40%">
+	</div>
+	<div class="custom"><p class="custom-p">DAN GAMEROS MORUA</p></div>
+	<div class="custom"><p class="custom-p">DAN GAMEROS MORUA</p></div>
+	<div class="custom"><p class="custom-p">DAN GAMEROS</p></div>
+	<div class="custom"><p class="custom-p">DAN GAMEROS</p></div>
+	<div class="custom"><p class="custom-p">DAN</p></div>
+	<div class="custom"><p class="custom-p">DAN</p></div>
+	<div class="custom"><span>DAN</span></div>
+	<div class="custom"></div>
+	<div class="custom"><p class="custom-p">DAN</p></div>
+	<div class="custom"><span class="custom-p">DAN</span></div>
+	<div class="custom"><span>DAN</span></div>
+	<div class="container">
+		<h3>Vertical align of multiple elements by default not possible.</h3>
+		<div class="block">
+			<div class="inner inner1">Inline-Block</div>
+			<div class="inner inner2">Inline-Block</div>
+		</div>
+		<h3>With an addded pseudo element it's possible</h3>
+		<div class="block2">
+			<div class="inner">Inline-Block</div>
+			<div class="inner">Inline-Block</div>
+		</div>
+		<h3>It also works with just an added line-height
+		 and nothing else</h3>
+		<div class="block3">
+			<div class="inner inner3">Inline-Block with some lengthy text to
+			 show that it also works with multiple lines.</div>
+			 <div class="inner inner3">Inline-Block</div>
+		</div>
+	</div>
+	<!-- <div></div> -->
+	<!-- <div><p class="custom one"></p></div> -->
+	<!-- <div><p class="custom two"></p></div>
+	<div><p class="test-p custom-p">DAN GAMEROS</p></div>
+	<div class="miscellaneous">DAN</div>
 	<div><p class="two"></p></div>
-	<div class="a"></div>
-	<div></div>
-	<div></div>
-	<div class="a"></div>
+	<div><p class="test-p custom-p">DAN GAMEROS</p></div>
+	<div><p class="test-p custom-p">DAN GAMEROS</p></div> -->
+	<!-- <div><p class="test-p custom-p">DAN GAMEROS</p></div> -->
+	<!-- <div><span class="custom-p">\</span></div>
+	<div><span class="custom-p">DAN</span></div>
+	<div class="custom-p"><span>DAN</span></div> -->
 </body>
 </html>
